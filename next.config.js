@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/bottlediary-mockup',
+  assetPrefix: '/bottlediary-mockup/',
   rewrites: async () => {
     return [
       {
