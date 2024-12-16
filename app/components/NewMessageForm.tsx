@@ -16,6 +16,7 @@ export function NewMessageForm() {
         // 送信が成功したらトースト通知を表示
         toast("ボトルメールは誰かのビーチに流れ着くでしょう")
         setIsSending(false)
+        setMessage('') // 入力フィールドをクリア
     }
 
     return (
@@ -50,4 +51,3 @@ export function NewMessageForm() {
         </div>
     )
 }
-
