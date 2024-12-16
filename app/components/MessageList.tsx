@@ -26,7 +26,7 @@ export function MessageList() {
     return (
         <div className="mb-12">
             <h2 className="text-2xl font-semibold mb-6 text-center">
-                受信したボトルメール
+                流れついたボトルメール
                 <span className="ml-2 bg-gray-800 text-white rounded-full px-3 py-1 text-sm">
                     {closedMessages.length}
                 </span>
@@ -36,7 +36,7 @@ export function MessageList() {
                     onClick={toggleAccordion}
                     className="w-full text-left flex items-center justify-between"
                 >
-                    <span>受信したボトルメールを表示</span>
+                    <span>流れ着いたボトルメールを表示</span>
                     <span>{isAccordionOpen ? '▲' : '▼'}</span>
                 </button>
                 {isAccordionOpen && (
