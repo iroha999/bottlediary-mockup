@@ -36,7 +36,7 @@ export function MessageList() {
                     onClick={toggleAccordion}
                     className="w-full text-left flex items-center justify-between"
                 >
-                    <span>流れ着いたボトルメールを表示</span>
+                    <span>ボトルメールを表示</span>
                     <span>{isAccordionOpen ? '▲' : '▼'}</span>
                 </button>
                 {isAccordionOpen && (
