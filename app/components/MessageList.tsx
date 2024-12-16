@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { Bottle } from './Icons'
 
@@ -21,7 +19,10 @@ export function MessageList() {
     return (
         <div className="mb-12">
             <h2 className="text-2xl font-semibold mb-6 text-center">
-                受信したボトルメール ({closedMessages.length}通)
+                受信したボトルメール
+                <span className="ml-2 bg-blue-500 text-white rounded-full px-3 py-1 text-sm">
+                    {closedMessages.length}
+                </span>
             </h2>
             <div className="space-y-6">
                 {messages.map((message) => (
@@ -49,4 +50,3 @@ export function MessageList() {
         </div>
     )
 }
-
