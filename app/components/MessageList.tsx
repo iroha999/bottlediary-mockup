@@ -34,7 +34,7 @@ export function MessageList() {
             <div className="border border-gray-200 p-6 rounded-lg shadow-md">
                 <button
                     onClick={toggleAccordion}
-                    className="w-full text-left hover:underline flex items-center justify-between"
+                    className="w-full text-left flex items-center justify-between"
                 >
                     <span>受信したボトルメールを表示</span>
                     <span>{isAccordionOpen ? '▲' : '▼'}</span>
@@ -54,7 +54,7 @@ export function MessageList() {
                                 ) : (
                                     <button
                                         onClick={() => openMessage(message.id)}
-                                        className="w-full text-left hover:underline flex items-center justify-center"
+                                        className="w-full text-left flex items-center justify-center"
                                     >
                                         <Bottle className="w-8 h-8 mr-2 text-black" />
                                         <span>クリックしてメッセージを開く</span>
