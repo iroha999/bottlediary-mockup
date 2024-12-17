@@ -47,7 +47,7 @@ export function NewMessageForm() {
                     {isSending ? '送信中...' : '送信'}
                 </button>
             </form>
-            <ToastContainer />
+            <ToastContainer position='top-center' style={{ width: 'auto', maxWidth: '80%' }} />
         </div>
     )
 }

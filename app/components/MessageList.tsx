@@ -8,6 +8,8 @@ export function MessageList() {
         { id: 1, content: "こんにちは、元気ですか？", date: "2023-06-01", isOpen: false, sender: "匿名" },
         { id: 2, content: "素敵な一日をお過ごしください。", date: "2023-06-02", isOpen: false, sender: "ユーザー1" },
         { id: 3, content: "あなたの夢を諦めないでください。", date: "2023-06-03", isOpen: false, sender: "匿名" },
+        { id: 4, content: "自分のパン屋さんを開業したいのですが、資金が足りず悪銭苦闘しています。誤字誤字やったー", date: "2023-06-04", isOpen: false, sender: "ユーザー2" },
+        { id: 5, content: "頑張ってください！", date: "2023-06-05", isOpen: false, sender: "匿名" },
     ])
     const [isAccordionOpen, setIsAccordionOpen] = useState(false)
 

@@ -16,12 +16,12 @@ export default function Account() {
     }
 
     return (
-        <div className="min-h-screen bg-white text-black">
+        <div className="min-h-screen bg-white text-black"> 
             <header className="bg-black text-white p-4">
                 <div className="container mx-auto flex justify-between items-center">
                     <div className="flex items-center">
                         <Bottle className="w-8 h-8 mr-2" />
-                        <h1 className="text-2xl font-bold">アカウント</h1>
+                        <h1 className="text-2xl font-bold">アカウントセンター</h1>
                     </div>
                     <Link href="/dashboard" className="hover:underline">ダッシュボードに戻る</Link>
                 </div>
