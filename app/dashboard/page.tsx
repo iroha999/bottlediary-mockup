@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { MessageList } from '../components/MessageList'
 import { NewMessageForm } from '../components/NewMessageForm'
 import { Bottle } from '../components/Icons'
+import { FaUserCircle } from 'react-icons/fa'
 
 export default function Dashboard() {
     return (
@@ -12,7 +13,9 @@ export default function Dashboard() {
                         <Bottle className="w-8 h-8 mr-2" />
                         <h1 className="text-2xl font-bold">Bottle Diary</h1>
                     </div>
-                    <Link href="/account" className="hover:underline">アカウント</Link>
+                    <Link href="/account" className="hover:underline">
+                        <FaUserCircle className="w-8 h-8 text-white" />
+                    </Link>
                 </div>
             </header>
             <main className="container mx-auto mt-8 px-4">
