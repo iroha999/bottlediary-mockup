@@ -26,17 +26,17 @@ export function MessageList() {
     const closedMessages = messages.filter(msg => !msg.isOpen)
 
     return (
-        <div className="mb-12">
+        <div>
             <h2 className="text-2xl font-semibold mb-6 text-center">
                 流れついたボトルメール
                 <span className="ml-2 bg-gray-800 text-white rounded-full px-3 py-1 text-sm">
                     {closedMessages.length}
                 </span>
             </h2>
-            <div className="border border-gray-200 p-6 rounded-lg shadow-md">
+            <div>
                 <button
                     onClick={toggleAccordion}
-                    className="w-full text-left flex items-center justify-between"
+                    className="w-full text-left flex items-center justify-between hover:bg-gray-100 transition-colors"
                 >
                     <span>ボトルメールを表示</span>
                     <span>{isAccordionOpen ? '▲' : '▼'}</span>
@@ -56,7 +56,7 @@ export function MessageList() {
                                 ) : (
                                     <button
                                         onClick={() => openMessage(message.id)}
-                                        className="w-full text-left flex items-center justify-center"
+                                        className="w-full text-left flex items-center justify-center hover:bg-gray-100 transition-colors"
                                     >
                                         <Bottle className="w-8 h-8 mr-2 text-black" />
                                         <span>クリックしてメッセージを開く</span>

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { FaPaperPlane } from 'react-icons/fa'
 
 export function NewMessageForm() {
     const [message, setMessage] = useState('')
@@ -20,7 +21,7 @@ export function NewMessageForm() {
     }
 
     return (
-        <div className="border border-gray-200 p-6 rounded-lg shadow-md">
+        <div>
             <h2 className="text-2xl font-semibold mb-6 text-center">新しいボトルメールを送信</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <textarea
@@ -41,10 +42,10 @@ export function NewMessageForm() {
                 </div>
                 <button
                     type="submit"
-                    className="w-full py-2 px-4 bg-black text-white rounded hover:bg-gray-800 transition-colors disabled:bg-gray-400"
+                    className="w-full py-2 px-4 bg-black text-white rounded hover:bg-gray-800 transition-colors disabled:bg-gray-400 flex items-center justify-center"
                     disabled={isSending || message.trim() === ''}
                 >
-                    {isSending ? '送信中...' : '送信'}
+                    {isSending ? '送信中...' : <><FaPaperPlane className="mr-2" />送信</>}
                 </button>
             </form>
             <ToastContainer position='top-center' style={{ width: 'auto', maxWidth: '80%' }} />
