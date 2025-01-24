@@ -5,17 +5,17 @@ import { Bottle } from './Icons'
 
 export function MessageList() {
     const [messages, setMessages] = useState([
-        { id: 1, content: "親愛なる誰かへ、本当に辛い日々が続いています。会社で上司に酷い扱いを受け、仕事に集中できなくなっています。家に帰っても心が重く、夜眠れないことが多いのです。自分の価値を見失いそうになっています。何か良いアドバイスはありませんか?これ以上は耐えられそうにありません。助けてください...", date: "2023-06-01", isOpen: false, sender: "匿名" },
-        { id: 2, content: "先日、仕事で大きな成果を上げることができました!上司から高い評価をいただき、賞与もついてきました。これまでの努力が報われた気がしてとてもうれしいです。同僚たちからも祝福の言葉をかけてもらい、チームとして一丸となれた瞬間でした。あの時の達成感と喜びは忘れられません。これからも会社に貢献し続けられるよう、さらに頑張っていきたいと思います。", date: "2023-06-02", isOpen: false, sender: "ユーザー1" },
-        { id: 3, content: "あなたの夢を諦めないでください。", date: "2023-06-03", isOpen: false, sender: "匿名" },
-        { id: 4, content: "自分のパン屋さんを開業したいのですが、資金が足りず悪銭苦闘しています。", date: "2023-06-04", isOpen: false, sender: "ユーザー2" },
-        { id: 5, content: "昨日はテストで百点をとることができました！", date: "2023-06-05", isOpen: false, sender: "匿名" },
-    ])
+        { id: 1, content: "どんなに小さな一歩でも、前に進んでいることを忘れないでください。暗闇の中でも、希望の光は必ず見つかります。あなたは一人じゃありません。", date: "2025-01-15", isOpen: false, sender: "匿名" },
+        { id: 2, content: "今日という日が、これからのあなたにとって素晴らしいものになりますように。過去の出来事に囚われず、新しい一歩を踏み出す勇気を持ってください。あなたの未来は輝いています。", date: "2025-01-15", isOpen: false, sender: "匿名" },
+        { id: 3, content: "ここ数ヶ月、ずっと何もかも上手くいかないように感じて、心が疲れ果ててしまいました。だけど、それでも明日が来ることを信じています。少しでも元気を出せるように、こうして言葉を送ります。", date: "2025-01-15", isOpen: false, sender: "匿名" },
+        { id: 4, content: "時には、立ち止まって自分を見つめ直すことが大切です。焦らず、無理をせず、一歩ずつ進んでいきましょう。あなたが歩む道は、あなた自身が作り上げるものです。", date: "2025-01-15", isOpen: false, sender: "匿名" },
+        { id: 5, content: "最近、何もかもがうまくいかないように感じて、自分を責める日々が続いています。でも、それでも一つの希望を持ち続けています。もしも、あなたも同じように感じていたら、この言葉が少しでも届けばいいなと思います。", date: "2025-01-15", isOpen: false, sender: "匿名" }
+    ]);
     const [isAccordionOpen, setIsAccordionOpen] = useState(false)
 
-    const openMessage = (id: number) => {
+    const toggleMessage = (id: number) => {
         setMessages(messages.map(msg =>
-            msg.id === id ? { ...msg, isOpen: true } : msg
+            msg.id === id ? { ...msg, isOpen: !msg.isOpen } : msg
         ))
     }
 
@@ -49,7 +49,11 @@ export function MessageList() {
                 {isAccordionOpen && (
                     <div className="mt-4 space-y-3">
                         {messages.map((message) => (
-                            <div key={message.id} className="border border-gray-200 p-4 rounded-lg hover:shadow-sm transition-shadow">
+                            <div
+                                key={message.id}
+                                className="border border-gray-200 p-4 rounded-lg hover:shadow-sm transition-shadow cursor-pointer"
+                                onClick={() => toggleMessage(message.id)}
+                            >
                                 {message.isOpen ? (
                                     <>
                                         <p className="mb-2 text-gray-800">{message.content}</p>
@@ -59,13 +63,10 @@ export function MessageList() {
                                         </div>
                                     </>
                                 ) : (
-                                    <button
-                                        onClick={() => openMessage(message.id)}
-                                        className="w-full text-left flex items-center justify-center py-2 hover:bg-gray-50 transition-colors rounded"
-                                    >
+                                    <div className="w-full text-left flex items-center justify-center py-2 hover:bg-gray-50 transition-colors rounded">
                                         <Bottle className="w-5 h-5 mr-2 text-gray-600" />
                                         <span className="text-gray-700">クリックしてメッセージを開く</span>
-                                    </button>
+                                    </div>
                                 )}
                             </div>
                         ))}

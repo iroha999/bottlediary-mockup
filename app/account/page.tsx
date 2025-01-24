@@ -25,7 +25,7 @@ export default function Account() {
     const handleLogout = () => {
         // ここに実際のログアウト処理を実装します
         // 例: クッキーやローカルストレージからユーザー情報を削除するなど
-
+        
         // ログアウト後、エントリーページにリダイレクト
         router.push('/')
     }
